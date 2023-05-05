@@ -1,4 +1,4 @@
-package com.example.foodservice2
+package com.example.foodservice2.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,6 +11,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.foodservice2.R
 import com.example.foodservice2.databinding.ActivityMainBinding
 
 

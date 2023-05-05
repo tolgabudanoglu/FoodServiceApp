@@ -1,10 +1,11 @@
-package com.example.foodservice2
+package com.example.foodservice2.ui.fragments.favorites
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.foodservice2.R
 
 class FavoriteRecipesFragment : Fragment() {
 
