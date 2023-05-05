@@ -1,6 +1,6 @@
 package com.example.foodservice2
 
-class Constrants {
+class Constants {
 
     companion object{
         const val BASE_URL = "https://api.spoonacular.com"
