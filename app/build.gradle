@@ -53,6 +53,11 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:2.5.3"
 
     //shimmer
-
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+
+    //gson
+    implementation 'com.google.code.gson:gson:2.10.1'
 }
