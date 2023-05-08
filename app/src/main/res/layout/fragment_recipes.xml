@@ -28,9 +28,9 @@
         android:alpha="0.5"
         android:src="@drawable/ic_sad"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/shimmer_view_container"
+        app:layout_constraintBottom_toBottomOf="@+id/shimmerFrameLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/shimmer_view_container"
+        app:layout_constraintStart_toStartOf="@+id/shimmerFrameLayout"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.36" />
 
