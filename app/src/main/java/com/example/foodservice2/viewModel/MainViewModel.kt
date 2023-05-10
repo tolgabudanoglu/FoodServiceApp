@@ -1,4 +1,4 @@
-package com.example.foodservice2
+package com.example.foodservice2.viewModel
 
 import android.app.Application
 import android.content.Context
