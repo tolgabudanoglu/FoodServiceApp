@@ -2,10 +2,12 @@ package com.example.foodservice2.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.foodservice2.databinding.RecipesRowLayoutBinding
 import com.example.foodservice2.models.FoodRecipes
 import com.example.foodservice2.models.Result
+import com.example.foodservice2.util.RecipesDiffUtil
 
 class RecipesAdapter : RecyclerView.Adapter<RecipesAdapter.MyViewHolder>() {
 
@@ -44,6 +46,10 @@ class RecipesAdapter : RecyclerView.Adapter<RecipesAdapter.MyViewHolder>() {
     }
 
     fun setData(newData: FoodRecipes){
-        notifyDataSetChanged()
+        val recipesDiffUtil = RecipesDiffUtil(recipe,newData.results)
+        val diffUtilResult = DiffUtil.calculateDiff(recipesDiffUtil)
+        recipe = newData.results
+        diffUtilResult.dispatchUpdatesTo(this)
+
     }
 }
