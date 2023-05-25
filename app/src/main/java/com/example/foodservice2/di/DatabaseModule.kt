@@ -22,12 +22,12 @@ object DatabaseModule {
         @ApplicationContext context: Context
     ) = Room.databaseBuilder(
         context,
-        RecipesDatabase.RecipesDatabase::class.java,
+        RecipesDatabase::class.java,
         DATABASE_NAME
     ).build()
 
     @Singleton
     @Provides
-    fun provideDao(database: RecipesDatabase.RecipesDatabase) = database.recipesDao()
+    fun provideDao(database: RecipesDatabase) = database.recipesDao()
 
 }
