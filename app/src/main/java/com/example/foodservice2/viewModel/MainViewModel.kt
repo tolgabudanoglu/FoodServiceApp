@@ -61,6 +61,7 @@ class MainViewModel @Inject constructor(
 
     private fun offlineCacheRecipes(foodRecipes: FoodRecipes) {
         val recipesEntity = RecipesEntity(foodRecipes)
+        insertRecipes(recipesEntity)
 
     }
 
