@@ -8,14 +8,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.foodservice2.viewModel.MainViewModel
 import com.example.foodservice2.adapters.RecipesAdapter
 import com.example.foodservice2.databinding.FragmentRecipesBinding
 import com.example.foodservice2.util.Constants.Companion.API_KEY
 import com.example.foodservice2.util.NetworkResult
+import com.example.foodservice2.util.observeOnce
 import com.example.foodservice2.viewModel.RecipesViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class RecipesFragment : Fragment() {
@@ -54,15 +57,17 @@ class RecipesFragment : Fragment() {
     }
 
     private fun readDatabase() {
-        mainViewModel.readRecipes.observe(viewLifecycleOwner) { database ->
-            if (database.isNotEmpty()) {
-                Log.d("Recipes Fragment","read database called")
-                mAdapter.setData(database[0].foodRecipe)
-                hideShimmerEffect()
-            } else {
-                requestApiData()
-            }
-        }
+       lifecycleScope.launch {
+           mainViewModel.readRecipes.observeOnce(viewLifecycleOwner) { database ->
+               if (database.isNotEmpty()) {
+                   Log.d("Recipes Fragment","read database called")
+                   mAdapter.setData(database[0].foodRecipe)
+                   hideShimmerEffect()
+               } else {
+                   requestApiData()
+               }
+           }
+       }
     }
 
     private fun requestApiData() {
@@ -91,9 +96,11 @@ class RecipesFragment : Fragment() {
     }
 
     private fun loadDataFromCache(){
-        mainViewModel.readRecipes.observe(viewLifecycleOwner) { database ->
-            if (database.isNotEmpty()) {
-                mAdapter.setData(database[0].foodRecipe)
+        lifecycleScope.launch {
+            mainViewModel.readRecipes.observe(viewLifecycleOwner) { database ->
+                if (database.isNotEmpty()) {
+                    mAdapter.setData(database[0].foodRecipe)
+                }
             }
         }
     }
