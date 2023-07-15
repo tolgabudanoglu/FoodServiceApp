@@ -23,16 +23,18 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class RecipesFragment : Fragment() {
 
-    private lateinit var mainViewModel: MainViewModel
+
     private var _binding: FragmentRecipesBinding? = null
     private val binding get() = _binding!!
+
+    private lateinit var mainViewModel: MainViewModel
     private lateinit var recipesViewModel: RecipesViewModel
     private val mAdapter by lazy { RecipesAdapter() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
-        recipesViewModel = ViewModelProvider(requireActivity()).get(RecipesViewModel::class.java)
+        mainViewModel = ViewModelProvider(requireActivity())[MainViewModel::class.java]
+        recipesViewModel = ViewModelProvider(requireActivity())[RecipesViewModel::class.java]
     }
 
 
@@ -42,12 +44,14 @@ class RecipesFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         _binding = FragmentRecipesBinding.inflate(inflater, container, false)
-        val view = binding.root
+        binding.lifecycleOwner = this
+        binding.mainViewModel = mainViewModel
+
 
 
         setupRecyclerView()
         readDatabase()
-        return view
+        return binding.root
     }
     private fun setupRecyclerView() {
         binding.recyclerview.adapter = mAdapter
@@ -121,6 +125,11 @@ class RecipesFragment : Fragment() {
         binding.recyclerview.visibility = View.VISIBLE
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+
+    }
 }
 
 
