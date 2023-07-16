@@ -7,4 +7,19 @@
     <string name="foodjoke">aaa</string>
     <string name="favorite_recipes_fragment" />
     <string name="food_joke_fragment" />
+    <string name="meal_type">meal Type</string>
+    <string name="main_course">Main Course</string>
+    <string name="drink">Drink</string>
+    <string name="finger_food">Finger Food</string>
+    <string name="snack">Snack</string>
+    <string name="marinade">Marinade</string>
+    <string name="sauce">Sauce</string>
+    <string name="beverage">Beverage</string>
+    <string name="soup">Soup</string>
+    <string name="bread">Bread</string>
+    <string name="salad">Salad</string>
+    <string name="breakfast">Breakfast</string>
+    <string name="appetizer">Appetizer</string>
+    <string name="side_dish">Side Dish</string>
+    <string name="desert">Desert</string>
 </resources>
