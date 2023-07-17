@@ -6,9 +6,10 @@
         <item name="colorAccent">@color/colorAccent</item>
 
 
+    </style>
 
 
-
-
+    <style name="CustomChipStyle" parent="Widget.MaterialComponents.Chip.Filter">
+        <item name="chipBackgroundColor"></item>
     </style>
 </resources>
