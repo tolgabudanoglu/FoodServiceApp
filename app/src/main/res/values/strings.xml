@@ -32,4 +32,5 @@
     <string name="vegetarian">Vegetarian</string>
     <string name="ketogenic">Ketogenic</string>
     <string name="glutenfree">GlutenFree</string>
+    <string name="search">Search</string>
 </resources>
