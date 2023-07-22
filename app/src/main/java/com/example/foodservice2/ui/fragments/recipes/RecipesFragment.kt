@@ -118,7 +118,9 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
 
     }
     override fun onQueryTextSubmit(query: String?): Boolean {
-
+        if (query != null){
+            searchApiData(query)
+        }
         return true
     }
 
@@ -165,6 +167,29 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
                 }
             }
         }
+    }
+
+    private fun searchApiData(searchQuery:String){
+        showShimmerEffect()
+        mainViewModel.searchRecipes(recipesViewModel.applySearchQueries(searchQuery))
+        mainViewModel.searchRecipesResponse.observe(viewLifecycleOwner) { response ->
+            when (response) {
+                is NetworkResult.Success -> {
+                    hideShimmerEffect()
+                    val foodRecipes = response.data
+                    foodRecipes?.let { mAdapter.setData(it) }
+                }
+                is NetworkResult.Error ->{
+                    hideShimmerEffect()
+                    loadDataFromCache()
+                    Toast.makeText(requireContext(),response.message.toString(),Toast.LENGTH_SHORT).show()
+                }
+                is NetworkResult.Loading ->{
+                    showShimmerEffect()
+                }
+            }
+        }
+
     }
 
     private fun loadDataFromCache(){
