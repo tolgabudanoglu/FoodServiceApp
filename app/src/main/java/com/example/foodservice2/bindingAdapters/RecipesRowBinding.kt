@@ -12,6 +12,7 @@ import androidx.navigation.findNavController
 import coil.load
 import com.example.foodservice2.R
 import com.example.foodservice2.ui.fragments.recipes.RecipesFragmentDirections
+import org.jsoup.Jsoup
 import kotlin.math.log
 
 class RecipesRowBinding {
@@ -78,6 +79,15 @@ class RecipesRowBinding {
                         )
                     }
                 }
+            }
+        }
+
+        @BindingAdapter("parseHtml")
+        @JvmStatic
+        fun parseHtlm(textView: TextView,description:String?){
+            if (description != null){
+                val desc = Jsoup.parse(description).text()
+                textView.text = desc
             }
         }
     }
