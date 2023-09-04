@@ -12,6 +12,7 @@ import com.example.foodservice2.databinding.ActivityDetailsBinding
 import com.example.foodservice2.ui.fragments.ingridents.IngredientsFragment
 import com.example.foodservice2.ui.fragments.instructions.InstructionsFragment
 import com.example.foodservice2.ui.fragments.overview.OverviewFragment
+import com.example.foodservice2.util.Constants.Companion.RECIPE_RESULT_KEY
 import com.google.android.material.tabs.TabLayoutMediator
 
 class DetailsActivity : AppCompatActivity() {
@@ -39,7 +40,7 @@ class DetailsActivity : AppCompatActivity() {
         titles.add("Instructions")
 
         val resultBundle = Bundle()
-        resultBundle.putParcelable("recipeBundle",args.result)
+        resultBundle.putParcelable(RECIPE_RESULT_KEY,args.result)
 
         val pagerAdapter = PagerAdapter(
             resultBundle,
