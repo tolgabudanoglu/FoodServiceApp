@@ -5,6 +5,7 @@ package com.example.foodservice2.data.database
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import com.example.foodservice2.data.database.entity.RecipesEntity
 
 @Database(
     entities = [RecipesEntity::class],
