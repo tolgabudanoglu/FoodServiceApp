@@ -18,7 +18,7 @@
     <fragment
         android:id="@+id/recipesFragment"
         android:name="com.example.foodservice2.ui.fragments.recipes.RecipesFragment"
-        android:label="fragment_recipes"
+        android:label="Recipes"
         tools:layout="@layout/fragment_recipes" >
         <action
             android:id="@+id/action_recipesFragment_to_recipesBottomSheet"
