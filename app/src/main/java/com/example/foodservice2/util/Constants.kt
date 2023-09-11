@@ -22,10 +22,12 @@ class Constants {
         const val DATABASE_NAME = "recipes_database"
         const val RECIPES_TABLE = "recipes_table"
         const val FAVORITE_RECIPES_TABLE ="favorite_recipes_table"
+        const val FOOD_JOKE_TABLE = "food_joke_table"
 
         const val DEFAULT_MEAL_TYPE="main course"
         const val DEFAULT_DIET_TYPE="gluten free"
         const val DEFAULT_RECIPES_NUMBER="50"
+
 
         const val PREFERENCES_NAME = "foodcuu preference"
         const val PREFERENCES_MEAL_TYPE = "mealType"
