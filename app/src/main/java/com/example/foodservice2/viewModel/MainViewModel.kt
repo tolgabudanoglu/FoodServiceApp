@@ -43,11 +43,10 @@ class MainViewModel @Inject constructor(
             repository.local.deleteFavoriteRecipe(favoritesEntity)
         }
 
-     fun deleteAllFavoriteRecipes() =
+    fun deleteAllFavoriteRecipes() =
         viewModelScope.launch(Dispatchers.IO) {
             repository.local.deleteAllFavoriteRecipes()
         }
-
 
     /** retrofit */
     var recipesResponse: MutableLiveData<NetworkResult<FoodRecipes>> = MutableLiveData()
