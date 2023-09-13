@@ -13,7 +13,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/lightGray"
+        android:background="@color/backgroundColor"
         tools:context=".ui.fragments.recipes.RecipesFragment">
 
         <TextView
@@ -54,7 +54,8 @@
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="24dp"
             android:clickable="true"
-            app:tint="@color/white"
+            app:backgroundTint="@color/colorPrimary"
+            app:tint="@color/lightGray"
             android:src="@drawable/ic_restaurant"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
