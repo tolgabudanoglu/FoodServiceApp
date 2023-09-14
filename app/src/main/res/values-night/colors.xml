@@ -25,6 +25,8 @@
     <color name="checkChipTextColor">@color/lightGray</color>
     <color name="chipTextColor">@color/lightGray</color>
     <color name="iconColor">@color/colorPrimary</color>
+    <color name="placeHolderColor">@color/darker</color>
+    <color name="itemColor">@color/mediumGray</color>
 
     <color name="actionBarBackgroundColor">@color/darker</color>
     <color name="backgroundColor">@color/dark</color>
